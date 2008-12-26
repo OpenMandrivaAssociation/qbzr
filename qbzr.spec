@@ -2,7 +2,7 @@
 
 Name:           qbzr
 Version:        0.9.5
-Release:        %mkrel 1
+Release:        %mkrel 2
 Summary:        QBzr is a cross-platform GUI front end for Bazaar, based on Qt toolkit
 
 Group:          Development/Other
