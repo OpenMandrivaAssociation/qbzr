@@ -47,7 +47,7 @@ CFLAGS="$RPM_OPT_FLAGS" python setup.py build
 
 %install
 rm -rf $RPM_BUILD_ROOT
-python setup.py install --root $RPM_BUILD_ROOT --record=INSTALLED_FILES
+python setup.py install --root $RPM_BUILD_ROOT 
 # remove shebangs from all files as none should be executable scripts
 sed -e '/^#!\//,1 d' -i $RPM_BUILD_ROOT/%py_puresitedir/bzrlib/plugins/qbzr/*.py
 
@@ -56,5 +56,25 @@ sed -e '/^#!\//,1 d' -i $RPM_BUILD_ROOT/%py_puresitedir/bzrlib/plugins/qbzr/*.py
 rm -rf $RPM_BUILD_ROOT
 
 
-%files -f INSTALLED_FILES
+%files 
 %defattr(-,root,root,-)
+%dir %py_puresitedir/bzrlib/plugins/qbzr
+%py_puresitedir/bzrlib/plugins/qbzr/*.py
+%py_puresitedir/bzrlib/plugins/qbzr/*.pyc
+
+%dir %py_puresitedir/bzrlib/plugins/qbzr/lib
+%py_puresitedir/bzrlib/plugins/qbzr/lib/*.py
+%py_puresitedir/bzrlib/plugins/qbzr/lib/*.pyc
+
+%dir %py_puresitedir/bzrlib/plugins/qbzr/lib/tests
+%py_puresitedir/bzrlib/plugins/qbzr/lib/tests/*.py
+%py_puresitedir/bzrlib/plugins/qbzr/lib/tests/*.pyc
+
+%dir %py_puresitedir/bzrlib/plugins/qbzr/lib/extra
+%py_puresitedir/bzrlib/plugins/qbzr/lib/extra/*.py
+%py_puresitedir/bzrlib/plugins/qbzr/lib/extra/*.pyc
+
+%dir %py_puresitedir/bzrlib/plugins/qbzr/locale
+%py_puresitedir/bzrlib/plugins/qbzr/locale/*
+
+%py_puresitedir/qbzr*.egg-info
