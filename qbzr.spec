@@ -1,7 +1,7 @@
 # spec originally for RHEL from: http://www.natemccallum.com/uploads/rpms/bzr/
 
 Name:           qbzr
-Version:        0.11
+Version:        0.12
 Release:        %mkrel 1
 Summary:        QBzr is a cross-platform GUI front end for Bazaar, based on Qt toolkit
 
@@ -76,5 +76,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %dir %py_puresitedir/bzrlib/plugins/qbzr/locale
 %py_puresitedir/bzrlib/plugins/qbzr/locale/*
+
+%py_puresitedir/bzrlib/plugins/qbzr/*.txt
 
 %py_puresitedir/qbzr*.egg-info
