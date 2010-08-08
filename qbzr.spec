@@ -2,7 +2,7 @@
 
 Name:           qbzr
 Version:        0.19
-Release:        %mkrel 1
+Release:        %mkrel 2
 Summary:        QBzr is a cross-platform GUI front end for Bazaar, based on Qt toolkit
 
 Group:          Development/Other
@@ -18,6 +18,7 @@ Requires:       bzr >= 2.1
 Requires:	python-qt4
 Requires:	python-enchant
 Requires:	python-pygments
+Requires:	python-markupsafe
 
 %description
 QBzr is a collection of GUI plugins for Bazaar.  Among the included
