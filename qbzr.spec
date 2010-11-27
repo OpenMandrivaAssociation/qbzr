@@ -1,8 +1,8 @@
 # spec originally for RHEL from: http://www.natemccallum.com/uploads/rpms/bzr/
 
 Name:           qbzr
-Version:        0.19.2
-Release:        %mkrel 2
+Version:        0.19.3
+Release:        %mkrel 1
 Summary:        QBzr is a cross-platform GUI front end for Bazaar, based on Qt toolkit
 
 Group:          Development/Other
