@@ -1,7 +1,7 @@
 # spec originally for RHEL from: http://www.natemccallum.com/uploads/rpms/bzr/
 
 Name:           qbzr
-Version:        0.21.2
+Version:        0.22.0
 Release:        %mkrel 1
 Summary:        QBzr is a cross-platform GUI front end for Bazaar, based on Qt toolkit
 
@@ -13,8 +13,8 @@ BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(id -u -n)
 
 BuildArch:      noarch
 BuildRequires:  python-devel bzr python-qt4
-Requires:       python >= 2.4
-Requires:       bzr >= 2.2
+Requires:       python >= 2.6
+Requires:       bzr >= 2.4
 Requires:	python-qt4
 Requires:	python-enchant
 Requires:	python-pygments
