@@ -1,14 +1,14 @@
 # spec originally for RHEL from: http://www.natemccallum.com/uploads/rpms/bzr/
 
 Name:           qbzr
-Version:        0.22.2
-Release:        %mkrel 1
+Version:        0.22.3
+Release:        1
 Summary:        QBzr is a cross-platform GUI front end for Bazaar, based on Qt toolkit
 
 Group:          Development/Other
 License:        GPL
 URL:            http://bazaar-vcs.org/QBzr
-Source0:        https://launchpad.net/%{name}/stable/%{version}/+download/%{name}-%{version}.tar.gz
+Source0:        https://launchpad.net/%{name}/0.22/%{version}/+download/%{name}-%{version}.tar.gz
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(id -u -n)
 
 BuildArch:      noarch
