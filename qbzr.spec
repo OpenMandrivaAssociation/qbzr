@@ -2,7 +2,7 @@
 
 Name:           qbzr
 Version:        0.23.0
-Release:        2
+Release:        3
 Summary:        Cross-platform GUI front end for Bazaar, based on Qt toolkit
 
 Group:          Development/Other
@@ -44,17 +44,15 @@ plugins are:
 
 
 %build
-CFLAGS="$RPM_OPT_FLAGS" python setup.py build
+CFLAGS="%{optflags}" python setup.py build
 
 %install
-rm -rf $RPM_BUILD_ROOT
-python setup.py install --root $RPM_BUILD_ROOT 
+python setup.py install --root %{buildroot} 
 # remove shebangs from all files as none should be executable scripts
 sed -e '/^#!\//,1 d' -i $RPM_BUILD_ROOT/%py_puresitedir/bzrlib/plugins/qbzr/*.py
 
 
 %clean
-rm -rf $RPM_BUILD_ROOT
 
 
 %files 
