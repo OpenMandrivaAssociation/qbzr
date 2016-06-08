@@ -1,8 +1,8 @@
 # spec originally for RHEL from: http://www.natemccallum.com/uploads/rpms/bzr/
 
 Name:           qbzr
-Version:        0.23.1
-Release:        2
+Version:        0.23.2
+Release:        1
 Summary:        Cross-platform GUI front end for Bazaar, based on Qt toolkit
 
 Group:          Development/Other
@@ -11,13 +11,13 @@ URL:            http://bazaar-vcs.org/QBzr
 Source0:        https://launchpad.net/%{name}/0.22/%{version}/+download/%{name}-%{version}.tar.gz
 
 BuildArch:      noarch
-BuildRequires:  python-devel bzr python-qt4
-Requires:       python >= 2.6
+BuildRequires:  python2-devel bzr python2-qt4
+Requires:       python2 >= 2.6
 Requires:       bzr >= 2.4
-Requires:	python-qt4
-Requires:	python-enchant
-Requires:	python-pygments
-Requires:	python-markupsafe
+Requires:	python2-qt4
+Requires:	python2-enchant
+Requires:	python2-pygments
+Requires:	python2-markupsafe
 
 %description
 QBzr is a collection of GUI plugins for Bazaar.  Among the included
@@ -44,12 +44,12 @@ plugins are:
 
 
 %build
-CFLAGS="%{optflags}" python setup.py build
+PYTHONDONTWRITEBYTECODE=1 CFLAGS="%{optflags}" python2 setup.py build
 
 %install
-python setup.py install --root %{buildroot} 
+PYTHONDONTWRITEBYTECODE=1 python2 setup.py install --root %{buildroot} 
 # remove shebangs from all files as none should be executable scripts
-sed -e '/^#!\//,1 d' -i $RPM_BUILD_ROOT/%py_puresitedir/bzrlib/plugins/qbzr/*.py
+sed -e '/^#!\//,1 d' -i $RPM_BUILD_ROOT/%py2_puresitedir/bzrlib/plugins/qbzr/*.py
 
 
 %clean
@@ -57,27 +57,27 @@ sed -e '/^#!\//,1 d' -i $RPM_BUILD_ROOT/%py_puresitedir/bzrlib/plugins/qbzr/*.py
 
 %files 
 %defattr(-,root,root,-)
-%dir %py_puresitedir/bzrlib/plugins/qbzr
-%py_puresitedir/bzrlib/plugins/qbzr/*.py
+%dir %py2_puresitedir/bzrlib/plugins/qbzr
+%py2_puresitedir/bzrlib/plugins/qbzr/*.py
 
-%dir %py_puresitedir/bzrlib/plugins/qbzr/lib
-%py_puresitedir/bzrlib/plugins/qbzr/lib/*.py
+%dir %py2_puresitedir/bzrlib/plugins/qbzr/lib
+%py2_puresitedir/bzrlib/plugins/qbzr/lib/*.py
 
-%dir %py_puresitedir/bzrlib/plugins/qbzr/lib/tests
-%py_puresitedir/bzrlib/plugins/qbzr/lib/tests/*.py
+%dir %py2_puresitedir/bzrlib/plugins/qbzr/lib/tests
+%py2_puresitedir/bzrlib/plugins/qbzr/lib/tests/*.py
 
-%dir %py_puresitedir/bzrlib/plugins/qbzr/lib/extra
-%py_puresitedir/bzrlib/plugins/qbzr/lib/extra/*.py
+%dir %py2_puresitedir/bzrlib/plugins/qbzr/lib/extra
+%py2_puresitedir/bzrlib/plugins/qbzr/lib/extra/*.py
 
-%dir %py_puresitedir/bzrlib/plugins/qbzr/lib/widgets
-%py_puresitedir/bzrlib/plugins/qbzr/lib/widgets/*.py
+%dir %py2_puresitedir/bzrlib/plugins/qbzr/lib/widgets
+%py2_puresitedir/bzrlib/plugins/qbzr/lib/widgets/*.py
 
-%dir %py_puresitedir/bzrlib/plugins/qbzr/locale
-%py_puresitedir/bzrlib/plugins/qbzr/locale/*
+%dir %py2_puresitedir/bzrlib/plugins/qbzr/locale
+%py2_puresitedir/bzrlib/plugins/qbzr/locale/*
 
-%py_puresitedir/bzrlib/plugins/qbzr/*.txt
+%py2_puresitedir/bzrlib/plugins/qbzr/*.txt
 
-%py_puresitedir/qbzr*.egg-info
+%py2_puresitedir/qbzr*.egg-info
 
 
 %changelog
