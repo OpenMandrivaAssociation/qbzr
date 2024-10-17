@@ -7,7 +7,7 @@ Summary:        Cross-platform GUI front end for Bazaar, based on Qt toolkit
 
 Group:          Development/Other
 License:        GPL
-URL:            http://bazaar-vcs.org/QBzr
+URL:            https://bazaar-vcs.org/QBzr
 Source0:        https://launchpad.net/%{name}/0.22/%{version}/+download/%{name}-%{version}.tar.gz
 
 BuildArch:      noarch
